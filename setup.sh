@@ -91,7 +91,7 @@ DISCORD_CLIENT_SECRET=
 # Bot
 DISCORD_USER_ROLE=            # Discord 'User' role ID
 DISCORD_SERVER_ID=
-DISOCRD_BOT_TOKEN=
+DISCORD_BOT_TOKEN=
 ADMIN_ROLE=
 OWNERS=                       # Discord user IDs separated by a space
 BOOSTER_ROLE=
@@ -158,8 +158,8 @@ DISCORD_LINK_URL=https://discord.com/api/oauth2/authorize?client_id=$DISCORD_LIN
 DISCORD_LOGIN_REDIRECT_URI=https://api.$DOMAIN/auth/discord/login/callback
 DISCORD_LINK_REDIRECT_URI=https://api.$DOMAIN/auth/discord/link/callback
 DISCORD_ROLES=$DISCORD_USER_ROLE
-DISCORD_SERVER_ID=$DISOCRD_SERVER_ID
-DISCORD_BOT_TOKEN=$DISOCRD_BOT_TOKEN
+DISCORD_SERVER_ID=$DISCORD_SERVER_ID
+DISCORD_BOT_TOKEN=$DISCORD_BOT_TOKEN
 
 " > .env
 
