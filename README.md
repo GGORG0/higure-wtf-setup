@@ -1,5 +1,7 @@
 # Higure.wtf setup
 This is a setup script for https://github.com/Higure-wtf/ . It's based on https://setup.elixr.host and config values are explained in there.
+## Warning
+I didn't test this, so if you find any bugs, report them in the *Issues* tab or make a pull request with the fix. Thanks!
 ## Running
 You can download the script and run it, but a faster way to do it is to run this:
 ```bash
