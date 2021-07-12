@@ -74,6 +74,9 @@ git clone https://github.com/Higure-wtf/Bot bot
 git clone https://github.com/Higure-wtf/Proxy cdn
 git clone https://github.com/Higure-wtf/Frontend frontend
 
+echo "Please follow this tutorial to setup Cloudflare. https://setup.elixr.host/cloudflare-setup/untitled When you're done, press enter."
+read
+
 # Config
 echo "# Cloudflare
 DOMAIN=
