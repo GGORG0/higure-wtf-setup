@@ -83,6 +83,7 @@ echo "Please follow this tutorial to setup Cloudflare. https://setup.elixr.host/
 read
 
 # Config
+cd ..
 echo "# Cloudflare
 DOMAIN=
 CLOUDFLARE_API_KEY=
@@ -106,6 +107,9 @@ ADMIN_USER_NAME=              # Username for the admin user that will be created
 echo "Please put in all the values in the 'config' file and press enter"
 read
 source config
+echo "Now you can delete the config file"
+cd sharex
+
 IP="$(ip a show eth0 | grep "inet " | awk '{print $2}' | sed --expression='s/\/24//g')"
 
 # Replacing the domain
