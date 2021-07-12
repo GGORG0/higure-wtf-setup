@@ -230,6 +230,7 @@ chmod +x minio.sh
 wget https://dl.min.io/client/mc/release/linux-amd64/mc
 chmod +x mc
 ./mc alias set myminio/ http://127.0.0.1:9000 $S3_ACCESS_KEY_ID $S3_SECRET_KEY
+./mc mb myminio/files
 ./mc policy set download myminio/files/*
 ./mc policy set none myminio/files/
 
