@@ -5,6 +5,6 @@ You can download the script and run it, but a faster way to do it is to run this
 ```bash
 curl "https://raw.githubusercontent.com/GGORG0/higure-wtf-setup/master/setup.sh" | bash
 ```
-**Reminder:** Always check scripts' contents before just piping it into bash!
+**Reminder:** Always check scripts' contents before just piping them into bash!
 ### Config
 When running the script, it will generate a `config` file in the current directory. Fill it out and press enter. 
