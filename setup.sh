@@ -23,7 +23,7 @@ sudo apt upgrade -y
 # Node.js
 curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
 sudo bash nodesource_setup.sh
-sudo apt install nodejs
+sudo apt install nodejs -y
 
 npm i pm2 -g 
 npm i typescript -g
