@@ -358,8 +358,8 @@ sed -i "s/app\.use\(
     cors\(\{
       credentials: true,
       origin: \[
-        'https:\/\/www.higure.wtf',
-        'https:\/\/higure.wtf',
+        'https:\/\/www.$DOMAIN',
+        'https:\/\/$DOMAIN',
         'http:/\/localhost:3000',
         'http:\/\/localhost:3000',
       \],
