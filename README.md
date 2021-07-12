@@ -4,6 +4,7 @@ This is a setup script for https://github.com/Higure-wtf/ . It's based on https:
 I didn't test this, so if you find any bugs, report them in the *Issues* tab or make a pull request with the fix. Thanks!
 ## Running
 I recommend following [this guide](https://setup.elixr.host/cloudflare-setup/untitled) **before** running this script, but it will ask to do it anyway. 
+
 You can download the script and run it, but a faster way to do it is to run this:
 ```bash
 curl "https://raw.githubusercontent.com/GGORG0/higure-wtf-setup/master/setup.sh" | bash
