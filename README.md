@@ -2,6 +2,8 @@
 This is a setup script for https://github.com/Higure-wtf/ . It's based on https://setup.elixr.host and config values are explained in there.
 ## Warning
 I didn't test this, so if you find any bugs, report them in the *Issues* tab or make a pull request with the fix. Thanks!
+## Security
+The API key is the default one because it didn't work for some reason when I changed it, so keep that in mind. Maybe I'll figure it out soon. 
 ## Running
 I recommend following [this guide](https://setup.elixr.host/cloudflare-setup/untitled) **before** running this script, but it will ask to do it anyway. 
 
