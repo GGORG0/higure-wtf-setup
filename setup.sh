@@ -5,6 +5,11 @@ genstr16() {
       echo -n "${chars:RANDOM%${#chars}:1}"
   done
 }
+genstr48() {
+  for i in {1..48} ; do
+      echo -n "${chars:RANDOM%${#chars}:1}"
+  done
+}
 genstr32() {
   for i in {1..32} ; do
       echo -n "${chars:RANDOM%${#chars}:1}"
@@ -129,7 +134,11 @@ npm i -g
 npm i 
 npm run build
 
-#API_KEY="$(genstr 48)"
+# Start script for PM2
+echo "npm run start" > start.sh
+chmod +x start.sh
+
+API_KEY="$(genstr48)"
 S3_ACCESS_KEY_ID="$(genstr16)"
 S3_SECRET_KEY="$(genstr32)"
 
@@ -137,7 +146,7 @@ MONGODB_PASSWORD="$(genstr8)"
 
 echo "PORT=2001
 MONGO_URI=mongodb://127.0.0.1:27017/sharex
-API_KEY=607cdbae-73b6-49d2-b023-5d3667083766
+API_KEY=$API_KEY
 BACKEND_URL=https://api.$DOMAIN
 FRONTEND_URL=https://$DOMAIN
 S3_SECRET_KEY=$S3_SECRET_KEY
@@ -193,10 +202,12 @@ db.createCollection(\"refreshtokens\")
 db.createCollection(\"shorteners\")
 db.createCollection(\"users\")
 " | mongo
-echo 'use sharex
-var o = JSON.parse("{"_id":"6ed52f08-0619-4057-bc22-f2ad9107893c","invitedUsers":[],"uid":453,"'"$ADMIN_USER_NAME"'":"adminuser","password":"$argon2i$v=19$m=4096,t=3,p=1$0z9v19NfpvBEiZi/hG3z9Q$XPzL4u0glI5ibMAREttWRy5Yz3ylDKo3E+DvLA6IVHQ","invite":"4249d4c8e5-249d4c8e5a9-9d4c8e","key":"'"$ADMIN_USER_NAME"'_b169e9bc871ba02daca274a5133d62","premium":false,"lastDomainAddition":null,"lastKeyRegen":null,"lastUsernameChange":null,"lastFileArchive":null,"email":"adminemail@gmail.com","emailVerified":true,"emailVerificationKey":"970ba8c23c506b7a30661063f3a710","discord":{"id":null,"avatar":null},"strikes":0,"disabled":false,"blacklisted":{"status":false,"reason":null},"uploads":0,"invites":1,"invitedBy":"GGORG","registrationDate":{"$date":"2021-07-07T17:08:39.607Z"},"lastLogin":null,"admin":true,"bypassAltCheck":false,"settings":{"domain":{"name":"i.'"$DOMAIN"'","subdomain":null},"randomDomain":{"enabled":false,"domains":[]},"embed":{"enabled":true,"color":"#13ed7c","title":"default","description":"default","author":"default","randomColor":true,"sitename":"default"},"embedprofile2":{"enabled":true,"color":"#13ed7c","title":"default","description":"default","author":"default","randomColor":true,"sitename":"default"},"embedprofile3":{"enabled":true,"color":"#13ed7c","title":"default","description":"default","author":"default","randomColor":true,"sitename":"default"},"fakeUrl":{"enabled":false,"url":"example.com"},"autoWipe":{"enabled":false,"interval":3600000},"showLink":false,"invisibleUrl":false,"longUrl":false},"__v":0}");
-db.users.insert(o)
-' | mongo
+echo '"{"_id":"6ed52f08-0619-4057-bc22-f2ad9107893c","invitedUsers":[],"uid":453,"'"$ADMIN_USER_NAME"'":"adminuser","password":"$argon2i$v=19$m=4096,t=3,p=1$0z9v19NfpvBEiZi/hG3z9Q$XPzL4u0glI5ibMAREttWRy5Yz3ylDKo3E+DvLA6IVHQ","invite":"4249d4c8e5-249d4c8e5a9-9d4c8e","key":"'"$ADMIN_USER_NAME"'_b169e9bc871ba02daca274a5133d62","premium":false,"lastDomainAddition":null,"lastKeyRegen":null,"lastUsernameChange":null,"lastFileArchive":null,"email":"adminemail@gmail.com","emailVerified":true,"emailVerificationKey":"970ba8c23c506b7a30661063f3a710","discord":{"id":null,"avatar":null},"strikes":0,"disabled":false,"blacklisted":{"status":false,"reason":null},"uploads":0,"invites":1,"invitedBy":"GGORG","registrationDate":{"$date":"2021-07-07T17:08:39.607Z"},"lastLogin":null,"admin":true,"bypassAltCheck":false,"settings":{"domain":{"name":"i.'"$DOMAIN"'","subdomain":null},"randomDomain":{"enabled":false,"domains":[]},"embed":{"enabled":true,"color":"#13ed7c","title":"default","description":"default","author":"default","randomColor":true,"sitename":"default"},"embedprofile2":{"enabled":true,"color":"#13ed7c","title":"default","description":"default","author":"default","randomColor":true,"sitename":"default"},"embedprofile3":{"enabled":true,"color":"#13ed7c","title":"default","description":"default","author":"default","randomColor":true,"sitename":"default"},"fakeUrl":{"enabled":false,"url":"example.com"},"autoWipe":{"enabled":false,"interval":3600000},"showLink":false,"invisibleUrl":false,"longUrl":false},"__v":0}"' > /tmp/user.json
+# echo 'use sharex
+# var o = JSON.parse("{"_id":"6ed52f08-0619-4057-bc22-f2ad9107893c","invitedUsers":[],"uid":453,"'"$ADMIN_USER_NAME"'":"adminuser","password":"$argon2i$v=19$m=4096,t=3,p=1$0z9v19NfpvBEiZi/hG3z9Q$XPzL4u0glI5ibMAREttWRy5Yz3ylDKo3E+DvLA6IVHQ","invite":"4249d4c8e5-249d4c8e5a9-9d4c8e","key":"'"$ADMIN_USER_NAME"'_b169e9bc871ba02daca274a5133d62","premium":false,"lastDomainAddition":null,"lastKeyRegen":null,"lastUsernameChange":null,"lastFileArchive":null,"email":"adminemail@gmail.com","emailVerified":true,"emailVerificationKey":"970ba8c23c506b7a30661063f3a710","discord":{"id":null,"avatar":null},"strikes":0,"disabled":false,"blacklisted":{"status":false,"reason":null},"uploads":0,"invites":1,"invitedBy":"GGORG","registrationDate":{"$date":"2021-07-07T17:08:39.607Z"},"lastLogin":null,"admin":true,"bypassAltCheck":false,"settings":{"domain":{"name":"i.'"$DOMAIN"'","subdomain":null},"randomDomain":{"enabled":false,"domains":[]},"embed":{"enabled":true,"color":"#13ed7c","title":"default","description":"default","author":"default","randomColor":true,"sitename":"default"},"embedprofile2":{"enabled":true,"color":"#13ed7c","title":"default","description":"default","author":"default","randomColor":true,"sitename":"default"},"embedprofile3":{"enabled":true,"color":"#13ed7c","title":"default","description":"default","author":"default","randomColor":true,"sitename":"default"},"fakeUrl":{"enabled":false,"url":"example.com"},"autoWipe":{"enabled":false,"interval":3600000},"showLink":false,"invisibleUrl":false,"longUrl":false},"__v":0}");
+# db.users.insert(o)
+# ' | mongo
+mongoimport --db sharex --collection users --file /tmp/user.json
 echo "Your MongoDB login URI is: mongodb://admin:$MONGODB_PASSWORD@$IP/admin"
 
 # CDN
@@ -238,7 +249,7 @@ chmod +x mc
 cd ../bot
 
 echo "BOT_TOKEN=$DISOCRD_BOT_TOKEN
-API_KEY=607cdbae-73b6-49d2-b023-5d3667083766
+API_KEY=$API_KEY
 PREFIX=!
 ADMIN_ROLE=$ADMIN_ROLE
 BACKEND_URL=https://api.$DOMAIN
