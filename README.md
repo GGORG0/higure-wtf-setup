@@ -6,6 +6,7 @@ I didn't test this, so if you find any bugs, report them in the *Issues* tab or 
 I recommend following [this guide](https://setup.elixr.host/cloudflare-setup/untitled) **before** running this script, but it will ask to do it anyway. 
 
 You can download the script and run it, but a faster way to do it is to run this:
+
 **For me it doesn't work when I curl it for some reason, so you may have to download and run it if you expierience problems.**
 ```bash
 curl "https://raw.githubusercontent.com/GGORG0/higure-wtf-setup/master/setup.sh" | bash
