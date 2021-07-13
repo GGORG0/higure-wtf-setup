@@ -79,7 +79,7 @@ git clone https://github.com/Higure-wtf/Bot bot
 git clone https://github.com/Higure-wtf/Proxy cdn
 git clone https://github.com/Higure-wtf/Frontend frontend
 
-echo "Please follow this tutorial to setup Cloudflare. https://setup.elixr.host/cloudflare-setup/untitled When you're done, press enter."
+echo -e "\e[1;32mPlease follow this tutorial to setup Cloudflare. https://setup.elixr.host/cloudflare-setup/untitled When you're done, press enter.\e[0m"
 read
 
 # Config
@@ -104,10 +104,10 @@ BOOSTER_ROLE=
 # Misc
 ADMIN_USER_NAME=              # Username for the admin user that will be created
 " > config
-echo "Please put in all the values in the 'config' file and press enter"
+echo -e "\e[1;32mPlease put in all the values in the 'config' file and press enter\e[0m"
 read
 source config
-echo "Now you can delete the config file"
+echo -e "\e[1;32mNow you can delete the config file\e[0m"
 cd sharex
 
 IP="$(ip a show eth0 | grep "inet " | awk '{print $2}' | sed --expression='s/\/24//g')"
@@ -212,7 +212,7 @@ echo '{"_id":"6ed52f08-0619-4057-bc22-f2ad9107893c","invitedUsers":[],"uid":453,
 # db.users.insert(o)
 # ' | mongo
 mongoimport --db sharex --collection users --file /tmp/user.json
-echo "Your MongoDB login URI is: mongodb://admin:$MONGODB_PASSWORD@$IP/admin"
+echo -e "\e[1;32mYour MongoDB login URI is: mongodb://admin:$MONGODB_PASSWORD@$IP/admin\e[0m"
 
 # CDN
 cd ../cdn
@@ -362,7 +362,7 @@ server {
 
 sudo nginx -t
 
-echo "Please go to Cloudflare and disable proxy for every DNS record. When you're done, press enter."
+echo -e "\e[1;32mPlease go to Cloudflare and disable proxy for every DNS record. When you're done, press enter.\e[0m"
 read
 yes "" | sudo certbot --nginx
 sudo nginx -t
