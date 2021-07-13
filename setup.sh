@@ -238,7 +238,7 @@ echo "go run main.go" > start.sh
 chmod +x start.sh
 
 # MinIO
-cd ..
+cd ../..
 wget https://dl.min.io/server/minio/release/linux-amd64/minio
 chmod +x minio
 echo "MINIO_ROOT_USER=$S3_ACCESS_KEY_ID MINIO_ROOT_PASSWORD=$S3_SECRET_KEY ./minio server /mnt/data" > minio.sh
@@ -253,7 +253,7 @@ chmod +x mc
 
 
 # Bot
-cd bot
+cd sharex/bot
 
 echo "BOT_TOKEN=$DISCORD_BOT_TOKEN
 API_KEY=$API_KEY
