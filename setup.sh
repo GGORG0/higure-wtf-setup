@@ -265,6 +265,8 @@ BOOSTER_ROLE=$BOOSTER_ROLE
 IGNORED_CHANNELS=0
 " > .env
 
+sed -i 's/super\(BOT_TOKEN\);/super\(BOT_TOKEN, null\);/g' src/client/main.ts
+
 # Installing node modules and building
 npm i -g
 npm i 
