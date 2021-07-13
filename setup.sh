@@ -364,7 +364,11 @@ sudo nginx -t
 
 echo -e "\e[1;32mPlease go to Cloudflare and disable proxy for every DNS record. When you're done, press enter.\e[0m"
 read
-yes "" | sudo certbot --nginx
+echo "$CLOUDFLARE_EMAIL
+Y
+N
+
+" | sudo certbot --nginx
 sudo nginx -t
 sudo systemctl restart nginx
 
