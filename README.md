@@ -1,11 +1,11 @@
 # Higure.wtf setup
-This is a setup script for https://github.com/Higure-wtf/ . It's based on https://setup.elixr.host and config values are explained in there.
+This is a setup script for https://github.com/Higure-wtf/ . It's based on [setup.elixr.host](https://web.archive.org/web/20210713192259/https://setup.elixr.host) and config values are explained in there.
 ## Warning
 I didn't test this, so if you find any bugs, report them in the *Issues* tab or make a pull request with the fix. Thanks!
 
 Also, another notice is that this script uses your Cloudflare email as the email for lets encrypt and also the admin account.
 ## Running
-I recommend following [this guide](https://setup.elixr.host/cloudflare-setup/untitled) **before** running this script, but it will ask to do it anyway. 
+I recommend following [this guide](web.archive.org/web/20210713192259/https://setup.elixr.host/cloudflare-setup/untitled) **before** running this script, but it will ask to do it anyway. 
 
 You can download the script and run it, but a faster way to do it is to run this:
 
